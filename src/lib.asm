@@ -1,0 +1,2 @@
+extern stringlength
+extern exit
