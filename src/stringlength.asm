@@ -1,7 +1,10 @@
-    global stringlength
+%include "lib.asm"
+    
     section .text
 
+; uint64 RAX stringlength(char* msg RDI)
 stringlength:
+    mov rax, rdi
     push rbx        ; RBX is nonvolatile, preserve since we use it
     xor rbx, rbx    ; set RBX to 0, this will be our length-counter
 _stringlength_loop:

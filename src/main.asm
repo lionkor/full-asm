@@ -3,10 +3,12 @@
 
     section .text 
 _start:
-    mov rax, message
-    call stringlength
+    mov rdi, message
+    call printline
+    mov rdi, rax
     call exit
+    ret
 
     section .data
 message:
-    db "Hello, World!", 10 ; with newline
+    db "Hello, World!", 0
