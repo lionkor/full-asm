@@ -5,10 +5,12 @@
 printline:
     call print
     push rdi
+    sub rsp, 8 ; align stack
     mov rdi, _newline
     call print
+    add rsp, 8 ; un-align stack
     pop rdi
     ret
 
     section .data
-_newline: db 10
+_newline: db 10, 0

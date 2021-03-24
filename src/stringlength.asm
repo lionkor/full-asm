@@ -4,15 +4,13 @@
 
 ; uint64 RAX stringlength(char* msg RDI)
 stringlength:
-    mov rax, rdi
-    push rbx        ; RBX is nonvolatile, preserve since we use it
-    xor rbx, rbx    ; set RBX to 0, this will be our length-counter
+    mov rax, rdi ; incrementing pointer
+    mov rdx, rdi ; begin pointer
 _stringlength_loop:
-    cmp byte [rax + rbx], 0     ; 0-terminated strings will have a 0 at the end
+    cmp byte [rax], 0     ; 0-terminated strings will have a 0 at the end
     je _stringlength_done       ; break when we find 0
-    inc rbx                     ; increment the counter
+    inc rax                     ; advance the pointer by 1 byte
     jmp _stringlength_loop      ; loop!
 _stringlength_done:
-    mov rax, rbx                ; move result to RAX
-    pop rbx                     ; restore nonvolatile RBX
+    sub rax, rdx                ; iter = iter - base => length
     ret

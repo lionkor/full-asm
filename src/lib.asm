@@ -1,3 +1,5 @@
+bits 64
+
 extern stringlength
 extern exit
 extern printline
