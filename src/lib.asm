@@ -11,3 +11,7 @@ extern is_digit
 stdin equ 0
 stdout equ 1
 stderr equ 2
+
+section .data
+_version:
+    db "v1.0", 0
