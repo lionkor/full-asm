@@ -7,10 +7,13 @@
     section .text 
 _start:
     mov rdi, buffer
-    mov rsi, 123
+    mov rsi, 11223322
     call int_to_string
+    mov rdi, message1
+    call print
     mov rdi, buffer
-    call printline
+    call print
+    call print_newline
     xor rdi, rdi
     call exit
     ret
@@ -18,5 +21,7 @@ _start:
     section .data
 n:
     db 123
+message1:
+    db "my number is ", 0
 message:
     db "oh hello there", 0
