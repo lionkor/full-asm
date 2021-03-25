@@ -10,6 +10,9 @@ extern is_digit
 extern print_bool
 extern print_newline
 extern print_char
+extern int_to_string
+extern fill_buffer
+extern zero_buffer
 
 stdin equ 0
 stdout equ 1
