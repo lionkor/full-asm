@@ -1,27 +1,30 @@
 %include "lib.asm"
     global _start
 
-extern do_thing
     section .bss
-argc: 
-    resq 1
-argv: ; char*[argc]
-    resq 1
     buffer resb 10
 
     section .text 
 _start:
+;    mov rdi, buffer
+;    mov rsi, 10
+;    mov rdx, n
+;    call int_to_string
+;    mov rdi, buffer
+;    call printline
     mov rdi, buffer
-    mov rsi, 9
-    mov dl, 'x'
-    call fill_buffer
-    mov byte [buffer + 9], 0
+    mov rsi, message
+    call string_copy
     mov rdi, buffer
+;    call reverse_string
+;    mov rdi, buffer
     call printline
     xor rdi, rdi
     call exit
     ret
 
     section .data
+n:
+    db 123
 message:
-    db "123a", 0
+    db "123aa321", 0
