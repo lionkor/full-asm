@@ -27,7 +27,8 @@ _int_to_string_loop:
     mov rsi, rax
     inc rcx
     cmp rsi, 0
-    jge _int_to_string_loop
+    jg _int_to_string_loop
     ; else end
 _int_to_string_end:
+    call reverse_string
     ret

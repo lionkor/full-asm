@@ -6,6 +6,11 @@
 
     section .text 
 _start:
+    mov rdi, buffer
+    mov rsi, 123
+    call int_to_string
+    mov rdi, buffer
+    call printline
     xor rdi, rdi
     call exit
     ret
