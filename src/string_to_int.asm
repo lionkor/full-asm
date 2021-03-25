@@ -3,6 +3,7 @@
     section .text
 
 ; int64_t RAX string_to_int(char* RDI)
+; does not handle sign
 string_to_int:
     xor rax, rax
 _string_to_int_loop:

@@ -2,6 +2,7 @@
 
     section .text
 ; void reverse_string(char* str RDI)
+; reverses string in-place
 reverse_string:
     push rdi
     call stringlength
@@ -24,3 +25,4 @@ _reverse_string_loop:
     
 _reverse_string_end:
     ret
+

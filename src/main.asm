@@ -12,13 +12,8 @@ _start:
 ;    call int_to_string
 ;    mov rdi, buffer
 ;    call printline
-    mov rdi, buffer
-    mov rsi, message
-    call string_copy
-    mov rdi, buffer
-    call reverse_string
-    mov rdi, buffer
-    call printline
+extern hello
+    call hello
     xor rdi, rdi
     call exit
     ret
