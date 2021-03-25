@@ -25,3 +25,4 @@ _string_to_int_loop:
 
 _string_to_int_return:
     ret
+

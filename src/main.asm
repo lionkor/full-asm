@@ -6,14 +6,6 @@
 
     section .text 
 _start:
-;    mov rdi, buffer
-;    mov rsi, 10
-;    mov rdx, n
-;    call int_to_string
-;    mov rdi, buffer
-;    call printline
-extern hello
-    call hello
     xor rdi, rdi
     call exit
     ret

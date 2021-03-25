@@ -7,6 +7,7 @@ ASMFLAGS = -felf64 -i src -Wall
 CFLAGS = -Wall -Wextra -nostdlib -c -m64 -Os -ffunction-sections -fdata-sections -fno-unwind-tables -fno-asynchronous-unwind-tables
 LDFLAGS = -static -O1 --as-needed -N --relax --gc-sections -z norelro --hash-style=sysv 
 STRIPFLAGS = -R .comment -R .gnu.version -R .note -R .eh_frame -R .eh_frame_hdr
+ARFLAGS = 
 EXE = test
 TARGET = elf64-x86-64
 
@@ -16,6 +17,7 @@ all: bin bin/objs bin/$(EXE) bin/$(EXE)_stripped
 
 bin/$(EXE): $(ASM_OBJS) $(C_OBJS)
 	pushd bin/objs; $(LD) $(LDFLAGS) $(^F) -o ../$(EXE) -b $(TARGET); popd
+	pushd bin/objs; $(AR) $(ARFLAGS) -cr ../libasm.a $(^F) ; popd
 
 bin/$(EXE)_stripped: bin/$(EXE)
 	cp bin/$(EXE) bin/$(EXE)_stripped
