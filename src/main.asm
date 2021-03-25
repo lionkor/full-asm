@@ -23,4 +23,4 @@ _start:
 
     section .data
 message:
-    db "123", 0
+    db "321", 0
