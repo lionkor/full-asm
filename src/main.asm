@@ -18,4 +18,4 @@ _start:
 
     section .data
 message:
-    db "123 a 321", 0
+    db "123a", 0
