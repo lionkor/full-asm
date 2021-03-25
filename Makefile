@@ -5,7 +5,7 @@ LD=ld
 CC=gcc
 ASMFLAGS = -felf64 -i src -Wall
 CFLAGS = -g -Wall -Wextra -nostdlib -c -m64
-LDFLAGS = -static -O1 --as-needed -N -s --relax --gc-sections
+LDFLAGS = -static -O1 --as-needed -N --relax --gc-sections
 EXE = test
 TARGET = elf64-x86-64
 
