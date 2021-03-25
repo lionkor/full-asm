@@ -2,18 +2,12 @@
 
     section .text
 
-; int RAX is_digit(char c RDI)
+; bool AL is_digit(char c DIL)
 ; it's a digit if it's between '0' and '9' ASCII.
+; returns 0 if not, 1 if it is
 is_digit:
-    cmp rdi, '0'
-    jge _is_digit_geq_0     ; >= '0' -> maybe a digit
-    jmp _is_digit_return_false       ; < '0' -> not a digit
-_is_digit_geq_0:
-    cmp rdi, '9'
-    jb _is_digit_return_false
-    mov rax, 1
+    sub edi, 48     ; 48 -> '0'
+    xor eax, eax
+    cmp dil, 9
+    setbe al
     ret
-_is_digit_return_false:
-    mov rax, 0
-    ret
-

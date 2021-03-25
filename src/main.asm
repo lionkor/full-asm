@@ -10,11 +10,6 @@ argv: ; char*[argc]
 
     section .text 
 _start:
-    mov rax, [rsp]      ; rsp holds argc
-    mov [argc], rax     ; so we save it
-    mov rax, [rsp + 8]  ; rsp + 8 is argv,
-    mov [argv], rax     ; so we save that, too
-    ; IGNORE ABOVE FOR NOW
     mov rdi, message
     call string_to_int
     mov rdi, rax
@@ -23,4 +18,4 @@ _start:
 
     section .data
 message:
-    db "321", 0
+    db "1", 0
