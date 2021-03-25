@@ -16,8 +16,8 @@ _start:
     mov rsi, message
     call string_copy
     mov rdi, buffer
-;    call reverse_string
-;    mov rdi, buffer
+    call reverse_string
+    mov rdi, buffer
     call printline
     xor rdi, rdi
     call exit
@@ -27,4 +27,4 @@ _start:
 n:
     db 123
 message:
-    db "123aa321", 0
+    db "oh hello there", 0
