@@ -7,10 +7,7 @@ extern do_thing
 _start:
     mov rdi, message
     call printline
-;    call do_thing
-;    xor rdi, rdi
-;    call stringlength
-    mov rdi, rax
+    xor rdi, rdi
     call exit
     ret
 
